@@ -59,4 +59,8 @@ until (board.victory_condition() || board.draw_condition())
   is_player2 = !is_player2
 end
 
-puts "#{player.name} wins!"
+if board.draw_condition
+  puts "It's a draw!"
+else
+  puts "#{player.name} wins!"
+end
