@@ -30,7 +30,7 @@ puts "Hi! Welcome to Tic Tac Toe!"
 puts "Player 1, identify yourself!"
 player1 = Player.new(gets.chomp)
 puts "Choose your weapon: X or O"
-player1.marker = gets.chomp
+player1.marker = gets.chomp.upcase
 puts "Player 2, please enter your name: "
 player2 = Player.new(gets.chomp)
 
