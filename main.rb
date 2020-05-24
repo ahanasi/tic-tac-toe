@@ -49,12 +49,12 @@ new_game = TicTacToe.new(board, player1, player2)
 new_game.choose_marker()
 
 puts "Awesome! #{player2.name}, you'll play with #{player2.marker}. Let's get started!"
+board.printb
 
 is_player2 = false
 
 until (board.victory_condition() || board.draw_condition())
   player = is_player2 ? player2 : player1
-  board.printb
   new_game.play_round(player)
   is_player2 = !is_player2
 end
