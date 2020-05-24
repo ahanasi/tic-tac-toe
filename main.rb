@@ -34,6 +34,7 @@ end
 # Gameplay
 
 board = Board.new()
+is_player2 = false
 
 puts "Hi! Welcome to Tic Tac Toe!"
 puts "Player 1, identify yourself!"
@@ -59,8 +60,6 @@ new_game.choose_marker()
 
 puts "Awesome! #{player2.name}, you'll play with #{player2.marker}. Let's get started!"
 board.printb
-
-is_player2 = false
 
 until (board.victory_condition() || board.draw_condition())
   player = is_player2 ? player2 : player1
