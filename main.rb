@@ -1,5 +1,6 @@
 require "/home/ahanasi/the_odin_project/tic-tac-toe/board.rb"
 require "/home/ahanasi/the_odin_project/tic-tac-toe/player.rb"
+require "pry"
 
 class TicTacToe
   attr_accessor :player1, :player2, :board
@@ -16,7 +17,15 @@ class TicTacToe
 
   def play_round(player)
     puts "#{player.name}, choose a number positon on the board to place your marker at."
-    player.position = gets.chomp.to_i
+    while 1
+      begin
+        player.position = Kernel.gets.chomp.match(/^[1-9]$/)[0].to_i
+      rescue NoMethodError
+        puts "Please choose a number position on the board"
+      else
+        break
+      end
+    end
     @board.place_marker(player.marker, player.position)
     @board.printb
   end
