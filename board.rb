@@ -14,8 +14,12 @@ class Board
     puts "#{@board[6]}    |  #{@board[7]}   |   #{@board[8]}"
   end
 
+  def valid_position(position)
+    @board[position-1].kind_of?(Integer)
+  end
+
   def place_marker(marker, num)
-    until @board[num - 1].kind_of?(Integer)
+    until valid_position(num)
       puts "Please choose an unoccupied number position to place your marker at"
       num = gets.chomp.to_i
     end
@@ -35,6 +39,6 @@ class Board
   end
 
   def draw_condition()
-    @board.all? {|cell| cell.kind_of?(String) }
+    @board.all? { |cell| cell.kind_of?(String) }
   end
 end
