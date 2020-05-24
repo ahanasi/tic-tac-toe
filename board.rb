@@ -15,6 +15,10 @@ class Board
   end
 
   def place_marker(marker, num)
+    until @board[num - 1].kind_of?(Integer)
+      puts "Please choose an unoccupied number position to place your marker at"
+      num = gets.chomp.to_i
+    end
     if @board[num - 1].kind_of?(Integer)
       @board[num - 1] = marker
     end
