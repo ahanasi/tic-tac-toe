@@ -52,7 +52,7 @@ puts "Awesome! #{player2.name}, you'll play with #{player2.marker}. Let's get st
 
 is_player2 = false
 
-until (board.victory_condition())
+until (board.victory_condition() || board.draw_condition())
   player = is_player2 ? player2 : player1
   board.printb
   new_game.play_round(player)
