@@ -29,8 +29,18 @@ board = Board.new()
 puts "Hi! Welcome to Tic Tac Toe!"
 puts "Player 1, identify yourself!"
 player1 = Player.new(gets.chomp)
-puts "Choose your weapon: X or O"
-player1.marker = gets.chomp.upcase
+
+while 1
+  puts "Choose your weapon: X or O"
+  begin
+    player1.marker = Kernel.gets.chomp.upcase.match(/^[X]$|^[O]$/)[0]
+  rescue NoMethodError
+    puts "Please choose either X or O"
+    puts "\tTry again...\n"
+  else
+    break
+  end  
+end
 puts "Player 2, please enter your name: "
 player2 = Player.new(gets.chomp)
 
