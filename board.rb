@@ -28,4 +28,8 @@ class Board
     end
     return false
   end
+
+  def draw_condition()
+    @board.all? {|cell| cell.kind_of?(String) }
+  end
 end

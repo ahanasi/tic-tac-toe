@@ -39,8 +39,9 @@ while 1
     puts "\tTry again...\n"
   else
     break
-  end  
+  end
 end
+
 puts "Player 2, please enter your name: "
 player2 = Player.new(gets.chomp)
 
