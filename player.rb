@@ -1,9 +1,11 @@
 class Player
   attr_reader :name
-  attr_accessor :move
+  attr_accessor :marker
+  attr_accessor :position
 
-  def initialize(name, move)
+  def initialize(name, marker = "", position = "")
     @name = name
-    @move = move
+    @marker = marker
+    @position = position
   end
 end
