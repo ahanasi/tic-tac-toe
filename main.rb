@@ -1,5 +1,5 @@
-require "/home/ahanasi/the_odin_project/tic-tac-toe/board.rb"
-require "/home/ahanasi/the_odin_project/tic-tac-toe/player.rb"
+require_relative "board.rb"
+require_relative "player.rb"
 require "pry"
 
 class TicTacToe
