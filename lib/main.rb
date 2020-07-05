@@ -33,7 +33,9 @@ end
 
 # Gameplay
 
-board = Board.new()
+def driver
+
+  board = Board.new()
 is_player2 = false
 
 puts "Hi! Welcome to Tic Tac Toe!"
@@ -72,3 +74,7 @@ if board.draw_condition
 else
   puts "#{player.name} wins!"
 end
+
+
+end
+
